@@ -1,36 +1,50 @@
-﻿# === 域名配置 ===
+# ============================================
+# 领域名称配置
+# ============================================
 domain:
-  name: "\u6821\u56ed"           # \u9886\u57df\u540d\u79f0
-  assistant_name: "\u6570\u5b57\u8f85\u5bfc\u5458"
+  name: "校园"                     # 领域名称，将影响 Prompt 中的称呼
+  assistant_name: "数字辅导员"       # 助手名称
 
-# === \u6a21\u578b\u914d\u7f6e ===
+# ============================================
+# 模型配置
+# ============================================
 model:
-  finetuned: "college_bot"
-  base: "qcwind/qwen2.5-7B-instruct-Q4_K_M"
-  ollama_host: "http://127.0.0.1:11434"
+  finetuned: "college_bot"          # 微调后的模型名（需提前在 Ollama 中创建）
+  base: "qcwind/qwen2.5-7B-instruct-Q4_K_M"  # 基座模型名
+  ollama_host: "http://127.0.0.1:11434"       # Ollama 服务地址
 
-# === \u77e5\u8bc6\u5e93 ===
+# ============================================
+# 知识库
+# ============================================
 knowledge_base:
-  raw_file: "./knowledge_base/manual.txt"
-  vector_db_dir: "./chroma_data"
-  collection_name: "domain_handbook"
-  chunk_size: 500
-  chunk_overlap: 50
+  raw_file: "./knowledge_base/manual.txt"     # 领域规章原始文档路径
+  vector_db_dir: "./chroma_data"              # ChromaDB 向量库持久化目录
+  collection_name: "domain_handbook"          # 向量库集合名称
+  chunk_size: 500                               # 文档分块大小
+  chunk_overlap: 50                             # 分块重叠长度
 
-# === \u5d4c\u5165\u6a21\u578b ===
+# ============================================
+# 嵌入模型
+# ============================================
 embedding:
-  model_name: "./models/bge-small-zh-v1.5"
+  model_name: "./models/bge-small-zh-v1.5"     # 嵌入模型路径
 
-# === \u63d0\u793a\u8bcd ===
+# ============================================
+# Prompt
+# ============================================
 prompt:
-  system_template: ""
+  system_template: ""                          # 自定义 system prompt（留空则使用默认模板）
 
-# === \u8bc4\u4f30 ===
+# ============================================
+# 评估
+# ============================================
 evaluation:
-  test_cases: "./test_cases.json"
-  consistency_runs: 3
+  test_cases: "./test_cases.json"               # 测试用例文件路径
+  consistency_runs: 3                             # 一致性测试重复运行次数
 
-# === UI ===
+# ============================================
+# UI
+# ============================================
 ui:
-  port: 8080
-  title: "\u6570\u5b57\u8f85\u5bfc\u5458"
+  port: 8080                                     # Web 界面端口
+  title: "数字辅导员"                             # 网页标题
