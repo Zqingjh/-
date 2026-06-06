@@ -1,0 +1,18 @@
+# 运行时生成数据
+chroma_data/
+models/
+results/
+*.db
+# 敏感信息
+.env
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+# IDE
+.idea/
+.vscode/
+# 日志
+*.log
+metrics_*.csv

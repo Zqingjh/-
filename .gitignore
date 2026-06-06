@@ -1,0 +1,29 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env
+.env.local
+
+# Project data
+chroma_data/
+knowledge_base/
+results/
+chat_history.db
+*.csv
+*.log
+
+# Models (too large, download separately)
+models/
+
+# Config (user-specific)
+config.yaml
+
+# Reports
+evaluation_results.png
+*.png
+!**/ablation_chart.png
